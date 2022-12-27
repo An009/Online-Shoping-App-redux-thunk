@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "name": "adil adil",
+      "username": "adil",
+      "email": "adil@ofppt-edu.ma",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "name": "nada nada",
+      "username": "nada",
+      "email": "nada@ofppt-edu.ma",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "name": "nabil",
+      "username": "nabil",
+      "email": "email1@gmail.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "name": "anwar",
+      "username": "krech",
+      "email": "tizguianouar@gmail.com",
+      "password": "0000",
+      "id": 4
+    },
+    {
+      "name": "mohamed",
+      "username": "salah",
+      "email": "liverpool@gmail.com",
+      "password": "9999",
+      "id": 5
+    },
+    {
+      "name": "nour",
+      "username": "amine",
+      "email": "nour@gmail.com",
+      "password": "8888",
+      "id": 6
+    }
+  ],
+  "products": [
+    {
+      "title": "Beat desk",
+      "content": "pro beat v344",
+      "price": 190.98,
+      "url": "https://res.cloudinary.com/dqdbbkhuj/image/upload/v1671783241/samples/onlineShoping/6182S7MYC2L._AC_UL320__yincq2.jpg",
+      "id": 1
+    },
+    {
+      "title": "lenovo",
+      "content": "touchpad LCD",
+      "price": 320.98,
+      "url": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51SzzGA6e6L._AC_SL1060_.jpg",
+      "id": 2
+    },
+    {
+      "title": "beats",
+      "content": "fit pro",
+      "price": 54.87,
+      "url": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41oloud8vxL._AC_SL1500_.jpg",
+      "id": 3
+    },
+    {
+      "title": "Gaming Headset",
+      "content": "Gaming Headset",
+      "price": 190.08,
+      "url": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61VhR5gHvqL._AC_SX425_.jpg",
+      "id": 4
+    },
+    {
+      "title": "Mini beat",
+      "content": "Dx 34",
+      "price": 76.99,
+      "url": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51rqaaObcZL._AC_SS450_.jpg",
+      "id": 5
+    },
+    {
+      "title": "Iphone 13",
+      "content": "pro max Sierra blue",
+      "price": 1034.98,
+      "url": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61jLiCovxVL._AC_SX679_.jpg",
+      "id": 6
+    },
+    {
+      "title": "Iphone 12",
+      "content": "pro max graphite",
+      "price": 688.98,
+      "url": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/715X4Evl75L._AC_UY218_.jpg",
+      "id": 7
+    },
+    {
+      "title": "MEGUO",
+      "content": "Bluetooth Speakers",
+      "price": 28.98,
+      "url": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71-oNUFHQxL._AC_SX425_.jpg",
+      "id": 8
+    },
+    {
+      "title": "Tronsmart T7",
+      "content": "Tronsmart T7",
+      "price": 67.98,
+      "url": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/81gfCArFZxL._AC_SX425_.jpg",
+      "id": 9
+    }
+  ]
+}
