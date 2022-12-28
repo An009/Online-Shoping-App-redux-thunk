@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice, nanoid } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:3005/users';
+const BASE_URL = 'http://localhost:3005/users?username=&password=';
 const initialState = {
     user:null,
     isLoading:false,
     error:null
 };
-export const fetchUsers = createAsyncThunk('users/fetchUsers' ,async()=>{
+/* export const fetchUsers = createAsyncThunk('users/fetchUsers' ,async()=>{
     try{
         const response = await axios.get(BASE_URL)
         return response.data
@@ -15,15 +15,16 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers' ,async()=>{
     catch(err){
         return err.message
     }
-});
+}); */
 export const login = createAsyncThunk('user/login',async({username, password},{rejectWithValue})=>{
     try{
-        const response = await axios.get(BASE_URL)
-        const users = response.data.filter(item=>item.username === username && item.password===password)
-        if(!users){
-            console.log('no user found');
+        const response = await axios.get(`http://localhost:3005/users?username=${username}&password=${password}`)
+        const user = response.data;
+        /* const users = response.data.filter(item=>item.username === username && item.password===password) */
+        if(user.length===0){
+            throw new Error('incorect username or password');
         }
-        return users;
+        return user;
     }
     catch(error){
         return rejectWithValue(error.message);
@@ -62,10 +63,10 @@ const userSlice = createSlice({
         })
         .addCase(login.rejected,(state,action)=>{
             state.isLoading = false;
-            state.error = action.error;
+            state.error = action.payload;
         })
         //fetchUser extrareducers
-        .addCase(fetchUsers.pending,(state,action)=>{
+        /* .addCase(fetchUsers.pending,(state,action)=>{
             state.isLoading = true;
         })
         .addCase(fetchUsers.fulfilled,(state,action)=>{
@@ -75,7 +76,7 @@ const userSlice = createSlice({
         .addCase(fetchUsers.rejected,(state,action)=>{
             state.isLoading = false
             state.error = action.error;
-        })
+        }) */
         //registerUser extrareducers
         .addCase(registerUser.pending,(state)=>{
             state.isLoading = true;
