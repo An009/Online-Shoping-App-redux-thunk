@@ -1,21 +1,29 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getIsLoading, login } from "../Features/userSlice";
+import { getError, getIsLoading, login, selectUser } from "../Features/userSlice";
 
 const LoginScreen = () => {
   const navigate = useNavigate();
+  const user  = useSelector(selectUser);
   const isLoading = useSelector(getIsLoading);
+  const errMessage = useSelector(getError);
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
+
 
   const submitForm = (data) => {
     if(data){
       dispatch(login(data));
-      navigate('/');
     }
     
   };
+  useEffect(()=>{
+    if(user){
+      navigate('/')
+    }
+  },[navigate,user]);
 
   return (
     <form onSubmit={handleSubmit(submitForm)}>
@@ -41,6 +49,7 @@ const LoginScreen = () => {
         <button type="submit" className="btn btn-outline-primary mt-3" disabled={isLoading?true:false}>
           Login
         </button>
+        {errMessage ? <p className="text-danger">{errMessage}</p>:null }
       </div>
     </form>
   );
