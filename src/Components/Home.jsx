@@ -18,7 +18,7 @@ const Home = () => {
   const user = useSelector(selectUser);
   useEffect(() => {
     dispatch(fetchProducts());
-  }, [dispatch]);
+  }, [dispatch,user]);
   return (
     <>
       {loading ? <p>Loading...</p> : null}
