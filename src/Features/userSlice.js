@@ -7,15 +7,7 @@ const initialState = {
     isLoading:false,
     error:null
 };
-/* export const fetchUsers = createAsyncThunk('users/fetchUsers' ,async()=>{
-    try{
-        const response = await axios.get(BASE_URL)
-        return response.data
-    }
-    catch(err){
-        return err.message
-    }
-}); */
+
 export const login = createAsyncThunk('user/login',async({username, password},{rejectWithValue})=>{
     try{
         const response = await axios.get(`http://localhost:3005/users?username=${username}&password=${password}`)
@@ -65,18 +57,6 @@ const userSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         })
-        //fetchUser extrareducers
-        /* .addCase(fetchUsers.pending,(state,action)=>{
-            state.isLoading = true;
-        })
-        .addCase(fetchUsers.fulfilled,(state,action)=>{
-            state.isLoading = false
-            state.user = action.payload;
-        })
-        .addCase(fetchUsers.rejected,(state,action)=>{
-            state.isLoading = false
-            state.error = action.error;
-        }) */
         //registerUser extrareducers
         .addCase(registerUser.pending,(state)=>{
             state.isLoading = true;
